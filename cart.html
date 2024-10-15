@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="about-page">
+        <div class="logo">
+            <h2>soveregain     <span>supplements</span></h2>
+        </div>
+        <nav>
+            <ul id="about-ul">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About-us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span id="cart-count">(0)</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="cart-page">
+        <h2 style="text-align: center; padding-top: 5%; padding-bottom: 5%;"> <span style="color:rgb(34, 176, 34)"> YOUR SHOPPING</span>    CART</h2>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be rendered here -->
+            </tbody>
+        </table>
+        <div class="cart-summary">
+            <p>Total Items: <span id="total-items">0</span></p>
+            <p>Total Price: $<span id="total-price">0.00</span></p>
+            <button id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </section>
+<script src="script.js"></script>
+<script>
+    // Function to get cart items from local storage
+    function getCartItems() {
+        return JSON.parse(localStorage.getItem('cartItems')) || [];
+    }
+    // Function to display cart items
+    function displayCartItems() {
+        const cartItems = getCartItems();
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalItemsContainer = document.getElementById('total-items');
+        const totalPriceContainer = document.getElementById('total-price');   
+        // Clear previous items
+        cartItemsContainer.innerHTML = '';
+        let totalItems = 0;
+        let totalPrice = 0;
+        cartItems.forEach(item => {
+            totalItems += item.quantity;
+            totalPrice += item.price * item.quantity;
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.name}</td>
+                <td>$${item.price.toFixed(2)}</td>
+                <td>${item.quantity}</td>
+                <td>$${(item.price * item.quantity).toFixed(2)}</td>
+                <td><button onclick="removeFromCart('${item.id}')">REMOVE</button></td>
+            `;
+            cartItemsContainer.appendChild(row);
+        });
+        totalItemsContainer.textContent = totalItems;
+        totalPriceContainer.textContent = totalPrice.toFixed(2);
+        updateCartCount(); // Update cart count in navigation
+    }
+    // Function to remove an item from the cart
+    function removeFromCart(id) {
+        let cartItems = getCartItems();
+        cartItems = cartItems.filter(item => item.id !== id);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        displayCartItems();
+    }
+    // Function to update cart count in navigation
+    function updateCartCount() {
+        const cartItems = getCartItems();
+        const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById('cart-count').textContent = `(${totalItems})`;
+    }
+    // Function to check if the cart is empty and proceed to checkout
+    function proceedToCheckout() {
+        const cartItems = getCartItems();
+        if (cartItems.length === 0) {
+            alert('YOUR CART IS EMPTY');
+        } else {
+            // Redirect to checkout page (replace 'checkout.html' with your actual checkout page)
+            window.location.href = 'checkout.html';
+        }
+    }
+    // Add event listener to "Proceed to Checkout" button
+    document.getElementById('checkout-btn').addEventListener('click', proceedToCheckout);
+    // Initialize the cart display
+    document.addEventListener('DOMContentLoaded', displayCartItems);
+
+     
+</script>
+</body>
+</html>

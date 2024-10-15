@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>SHOP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>soveregain     <span>supplements</span></h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About-us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span id="cart-count">(0)</span></a></li>
+            </ul>
+            <!-- Search bar -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for products...">
+                <button id="search-btn" style="font-size: 18px;"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+    <section class="shop-header" style="background-color: rgb(74, 148, 79);">
+        <h1 style="color: black; text-align: center;">SHOP</h1>  
+        <a style="text-decoration: none; color: black; padding-left: 580px;" href="index.html">HOME</a>
+        </section>
+    <h1 id ="hso" align="center">SHOP OUR <SPAN>SUPPLEMENTS</SPAN></h1>
+    <aside class="product-categories">
+        <h3>Product Categories</h3>
+        <ul>
+            <li><a href="Supplements for men.html">Supplements for Men</a></li>
+            <li><a href="supplements for women.html">Supplements for Women</a></li>
+            <li><a href="Vitamins.html">Vitamins</a></li>
+            <li><a href="proteins.html">Proteins</a></li>
+            <li><a href="Energy boosters.html">Energy Boosters</a></li>
+        </ul>
+    </aside>
+    <section class="our-brands">
+        <h2 id="brand">BRANDS WE     <SPAN>WORK WITH</SPAN></h2>
+        <div class="brands-logos">
+            <a href="#"><img src="gojo.webp" alt="Brand 1"></a>
+            <a href="#"><img src="gojo.webp" alt="Brand 2"></a>
+            <a href="#"><img src="gojo.webp" alt="Brand 3"></a>
+            <a href="#"> <img src="gojo.webp" alt="Brand 1"></a>
+            <a href="#"><img src="gojo.webp" alt="Brand 2"></a>
+            <a href="#"><img src="gojo.webp" alt="Brand 3"></a>
+            <!-- Add more logos -->
+        </div>
+    </section>
+          <!-- Product Section -->
+    <section class="product-list">
+        <!-- Repeat this block for each product -->
+        <div class="product-item">
+            <img src="supp.webp" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>This is a short description of Product 1.</p>
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+            </div>
+            <p>$9.99</p>
+            <button class="add-to-cart"  onclick="addToCart('1', 'Product 1', 9.99)">Add to Cart</button>
+            <a  style= "font-size: 15px; color: green;"href="product.html?id=1" class="btn">View Details</a>
+        </div>
+        <div class="product-item">
+            <img src="supp2.webp" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>This is a short description of Product 1.</p>
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+            </div>
+            <p>$99.99</p>
+            <button class="add-to-cart"  onclick="addToCart('2', 'Product 2', 99.99)">Add to Cart</button>
+            <a style= "font-size: 15px; color: green;" href="product2.html?id=2" class="btn">View Details</a>
+        </div>
+        <div class="product-item">
+            <img src="pro1.png" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>This is a short description of Product 1.</p>
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+            </div>
+            <p>$49.99</p>
+            <button class="add-to-cart"  onclick="addToCart('3', 'Product 3', 49.99)">Add to Cart</button>
+            <a style= "font-size: 15px; color: green;" href="product3.html?id=3" class="btn">View Details</a>
+        </div>
+        <div class="product-item">
+            <img src="product1.jpg" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>This is a short description of Product 1.</p>
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+            </div>
+            <p>$9.99</p>
+            <button class="add-to-cart"  onclick="addToCart('4', 'Product 4', 9.99)">Add to Cart</button>
+            <a  style= "font-size: 15px; color: green;"href="product4.html?id=4" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 5">
+        <h3>Product 5</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$24.99</p>
+        <button class="add-to-cart"  onclick="addToCart('5', 'Product 5', 24.99)">Add to Cart</button>
+        <a  style= "font-size: 15px; color: green;"href="product5.html?id=5" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 6">
+        <h3>Product 6</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$25.99</p>
+        <button class="add-to-cart"  onclick="addToCart('6', 'Product 6', 25.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product6.html?id=6" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 7">
+        <h3>Product 7</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$9.99</p>
+        <button class="add-to-cart"  onclick="addToCart('7', 'Product 7', 9.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product7.html?id=7" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 8">
+        <h3>Product 8</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$39.99</p>
+        <button class="add-to-cart"  onclick="addToCart('8', 'Product 8', 39.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product8.html?id=8" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 9">
+        <h3>Product 9</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$19.99</p>
+        <button class="add-to-cart"  onclick="addToCart('9', 'Product 9', 19.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product9.html?id=9" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 10">
+        <h3>Product 10</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$89.99</p>
+        <button class="add-to-cart"  onclick="addToCart('10', 'Product 10', 89.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product9.html?id=9" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 11">
+        <h3>Product 11</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$79.99</p>
+        <button class="add-to-cart"  onclick="addToCart('11', 'Product 11', 79.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product9.html?id=9" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 12">
+        <h3>Product 12</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$49.99</p>
+        <button class="add-to-cart"  onclick="addToCart('12', 'Product 12', 49.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product9.html?id=9" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 13">
+        <h3>Product 13</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$59.99</p>
+        <button class="add-to-cart"  onclick="addToCart('13', 'Product 13', 59.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product9.html?id=9" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 14">
+        <h3>Product 14</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$9.99</p>
+        <button class="add-to-cart"  onclick="addToCart('14', 'Product 14', 9.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product9.html?id=9" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 15">
+        <h3>Product 15</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$19.99</p>
+        <button class="add-to-cart"  onclick="addToCart('15', 'Product 15', 19.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product9.html?id=9" class="btn">View Details</a>
+    </div>
+    <div class="product-item">
+        <img src="product1.jpg" alt="Product 16">
+        <h3>Product 16</h3>
+        <p>This is a short description of Product 1.</p>
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+        </div>
+        <p>$39.99</p>
+        <button class="add-to-cart"  onclick="addToCart('16', 'Product 16', 39.99)">Add to Cart</button>
+        <a style= "font-size: 15px; color: green;" href="product9.html?id=9" class="btn">View Details</a>
+    </div>
+    </section>
+    
+                    <!-- Buttons Linking to Other Pages -->
+                    <section class="page-links">
+                            <button onclick="location.href='page1.html'">2</button>
+                         <button onclick="location.href='page2.html'"> 3</button>
+                        <button onclick="location.href='page3.html'"> 4</button>
+                    </section>
+                    <section class="special-offers">
+                        <h2>Special Offers</h2>
+                        <div class="offer-item">
+                            <h3>20% Off on All Supplements!</h3>
+                            <p>Limited time offer! Use code <strong>SUPPLEMENT20</strong> at checkout.</p>
+                        </div>
+                        <div class="offer-item">
+                            <h3>Buy One Get One Free</h3>
+                            <p>Buy any product and get the second one free. Don't miss out!</p>
+                        </div>
+                        <div class="offer-item">
+                            <h3>Free Shipping on Orders Over $50</h3>
+                            <p>Enjoy free shipping on all orders over $50. Shop now!</p>
+                        </div>
+                    </section>
+                     <!-- Short About Us Section -->
+    <section class="about-us">
+        <h2>About Us</h2>
+        <p>At Sovereign Supplements, we are dedicated to providing high-quality nutritional products that support your health and fitness journey. Our carefully curated supplements are designed to enhance your performance and well-being, empowering you to reach your goals.</p>
+    </section>
+    <section id="revs">
+        <div class="reviews">
+            <h3>CUSTOMER         <span>REVIEWS</span></h3>
+            <p><strong>Dawood:</strong> Great product! Highly recommend.</p>
+            <p><strong>Rana Haroon:</strong> I saw results within a week!</p>
+            <!-- Review Form -->
+            <h4>Leave a Review</h4>
+            <form id="review-form" onsubmit="submitReview(event)">
+                <input type="text" id="reviewer-name" placeholder="Your Name" required>
+                <br><br>
+                <textarea id="review-text" placeholder="Your Review" required></textarea>
+                <br><br>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+        </section>
+        <br><br><br>
+        <button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>soveregain  <br>   <span>supplements</span></h2>
+            </div>
+            <div class="footer-links">
+                <h3 style="color:white;">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3 style="color:white;">Contact Us</h3>
+                <p>123 Supplement Street<br>Healthy City, HC 12345</p>
+                <p>Phone: (123) 456-7890</p>
+                <a href="#" style="text-decoration: none;color: rgb(42, 171, 62);">Email: @soveregain/supplement.com</a>
+            </div>
+            <div class="footer-social">
+                <h3 style="color:white;">Follow Us</h3>
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-payments">
+                <h3 style="color:white;">We Accept</h3>
+                <img src="visa.svg" alt="Visa" class="payment-icon">
+                <img src="eaaypaisa.webp" alt="MasterCard" class="payment-icon">
+                <img src="mastercard.svg" alt="PayPal" class="payment-icon">
+                <img src="paypal.svg" alt="American Express" class="payment-icon">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Supplement Store. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function addToCart(id, name, price) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const existingItem = cartItems.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += 1; // Increment quantity if already in cart
+            } else {
+                cartItems.push({ id, name, price, quantity: 1 });
+            }
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            alert(`${name} ADDED TO CART!`);
+            updateCartCount(); // Update cart count in navigation
+        }
+        function updateCartCount() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').textContent = `(${totalItems})`;
+        }
+        // Call this function on page load to set initial count
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script> 
+</body>
+</html>

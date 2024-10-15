@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>soveregain     <span>supplements</span></h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About-us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span id="cart-count">(0)</span></a></li>
+                <li><a href="#" id="login-link"><i class="fa fa-user-circle" aria-hidden="true" style="font-size:20px ;"></i></a></li>
+                <li><a href="#" id="signup-link">Sign Up</a></li>
+            </ul>
+            <!-- Search bar -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for products...">
+                <button id="search-btn" style="font-size: 18px;"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+  <!-- Login/Signup Modal -->
+<div id="auth-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="auth-forms">
+            <div id="login-form" class="auth-form">
+                <h2>Login</h2>
+                <input type="text" placeholder="Username" id="login-username" required>
+                <input type="password" placeholder="Password" id="login-password" required>
+                <button id="login-submit">Login</button>
+            </div>
+            <div id="signup-form" class="auth-form" style="display:none;">
+                <h2>Sign Up</h2>
+                <input type="text" placeholder="Username" id="signup-username" required>
+                <input type="email" placeholder="Email" id="signup-email" required>
+                <input type="password" placeholder="Password" id="signup-password" required>
+                <button id="signup-submit">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+   <!-- Full-Width Image Slider -->
+   <section class="slider">
+    <div class="slides">
+        <!-- Slide 1 -->
+        <div class="slide" style="background-image: url('back1.webp');">
+            <div class="slide-content">
+                <h2><spna style="color: green;">BOOST</spna> YOUR HEALTH</h2>
+                <p>Discover the best supplements for a stronger immune system.</p>
+                <a href="shop.html"><button class="slider-btn">Shop Now</button></a>
+            </div>  
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('back2.webp');">
+            <div class="slide-content">
+                <h2><span style="color:green">POWER UP</span> YOR FITNESS</h2>
+                <p>Supplements that enhance your workouts and recovery.</p>
+                <button class="slider-btn" id="explore-btn">Explore</button>
+            </div>
+        </div>
+               <!-- Hidden Paragraph Section (Sliding up from the bottom) -->
+<div class="sliding-paragraph" id="sliding-paragraph">
+    <!-- Close Button -->
+    <span class="close-btn" id="close-btn"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+    <p id="hidden-paragraph">
+        Discover the best fitness supplements that can enhance your workout performance, improve muscle recovery, and
+        boost your energy levels. Whether you're aiming for muscle gain, endurance, or overall fitness, our products
+        will help you achieve your goals. Get the perfect combination of pre-workouts, proteins, and vitamins to
+        support your fitness journey. Optimize your routine with scientifically backed supplements that offer real
+        results.
+    </p>
+</div>
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('back3.webp');">
+            <div class="slide-content">
+                <h2><span style="color: green;">FOCUS</span> AND ENERGY</h2>
+                <p>Find supplements that improve your cognitive function.</p>
+                <button class="slider-btn" id="learn-more-btn">Learn More</button>
+            </div>
+        </div>
+        <!-- Hidden Paragraph Section (Sliding up from the bottom) -->
+<div class="sliding-paragraph-learn-more" id="sliding-paragraph-learn-more">
+    <!-- Back Button -->
+    <span class="back-btn" id="back-btn"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+    <p id="learn-more-paragraph">
+        Enhance your mental clarity, focus, and energy levels with supplements specifically designed to support cognitive function. 
+        Whether you're working on a big project, preparing for an exam, or simply want to stay sharp throughout the day, our products 
+        offer natural, effective solutions. Boost your brainpower and productivity with scientifically backed supplements like Omega-3 
+        fatty acids, B-vitamins, and nootropics that improve mental performance and reduce fatigue. Get ready to unlock your mind's full potential.
+    </p>
+</div>
+        <!-- Slide 4 -->
+        <div class="slide" style="background-image: url('back4.webp');">
+            <div class="slide-content">
+                <h2><span style="color: green;">BUILD</span> YOUR STRENGTH</h2>
+                <p>Supplements to help you build muscle and stay fit.</p>
+                <button class="slider-btn" id="get-started-btn">Get Started</button>
+            </div>
+        </div>
+        <!-- Hidden Product Section (Sliding up from the bottom) -->
+<div class="sliding-products" id="sliding-products">
+    <!-- Top Paragraph -->
+    <div class="top-paragraph">
+        <h3 style="text-align: center;"><span style="color: green;">START BUILDING STRENGTH</span>   WITH THESE SUPPLEMENTS </h3>
+        <p style="text-align: justify;">Our range of muscle-building supplements are scientifically designed to help you achieve your fitness goals. Whether you're looking to increase muscle mass, enhance your endurance, or support your recovery, we've got the right products for you.</p>
+    </div>
+            <!-- Product List (Sliding up) -->
+    <div class="product-list-hidden">
+        <div class="product-hi">
+            <img src="gojo.webp" alt="Whey Protein">
+            <h4>Whey Protein</h4>
+            <p>Fast-digesting protein to help you build muscle and recover faster.</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-hi">
+            <img src="product2.jpg" alt="Creatine Monohydrate">
+            <h4>Creatine Monohydrate</h4>
+            <p>Boost strength and power during high-intensity workouts.</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-hi">
+            <img src="product3.jpg" alt="BCAA">
+            <h4>BCAA</h4>
+            <p>Support muscle recovery and prevent muscle breakdown during training.</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-hi">
+            <img src="product4.jpg" alt="Pre-Workout">
+            <h4>Pre-Workout</h4>
+            <p>Increase energy, focus, and endurance before your workout.</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+    <!-- Close Button -->
+    <button id="close-products-btn" class="close-btn">Close</button>
+</div>
+        <!-- Slide 5 -->
+        <div class="slide" style="background-image: url('back5.webp');">
+            <div class="slide-content">
+                <h2><span style="color: green;">STAY</span> HEALTHY</h2>
+                <p>Our products are designed to keep you healthy year-round.</p>
+                <a href="page1.html"><button class="slider-btn">view products</button></a>
+            </div>
+        </div>
+        <!-- Slide 6 -->
+        <div class="slide" style="background-image: url('back6.webp');">
+            <div class="slide-content">
+                <h2><span style="color: green;">OPTIMIZE</span> YOUR LIFE</h2>
+                <p>Supplements that fit your lifestyle and goals.</p>
+                <a href="page2.html"><button class="slider-btn">shop supplements</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation arrows -->
+    <a class="prev" onclick="moveSlides(-1)">&#10094;</a>
+    <a class="next" onclick="moveSlides(1)">&#10095;</a>
+</section>
+    <!-- Heading for the products section -->
+    <h1 id="hso" align="center">TOP     <SPAN>SUPPLEMENTS</SPAN></h1>
+    <section id="products-section">  
+        <div id="products">
+            <!-- First Row of Products -->
+            <div class="product">
+                <img src="supp.webp" alt="Product 1" class="product-image">
+                <h3>Supplement 1</h3>
+                <p>Boost your immune system with this top-tier supplement.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+                </div>
+                <p>$69.99</p>
+                <button class="add-to-cart" data-product-id="1"  onclick="addToCart('1', 'Product 1',69.99)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="supp2.webp" alt="Product 2" class="product-image">
+                <h3>Supplement 2</h3>
+                <p>Boost your immune system with this top-tier supplement.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars out of 5 -->
+                </div>
+                <p>$29.99</p>
+                <button class="add-to-cart" data-product-id="2" onclick="addToCart('2', 'Product 2', 29.99)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="supp.webp" alt="Product 3" class="product-image">
+                <h3>Supplement 3</h3>
+                <p>Improves cognitive function and focus.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <!-- 5 stars -->
+                </div>
+                <p>$27.99</p>
+                <button class="add-to-cart" data-product-id="3" onclick="addToCart('3', 'Product 3', 27.99)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="supp2.webp" alt="Product 4" class="product-image">
+                <h3>Supplement 4</h3>
+                <p>Supports heart health and overall wellness.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars -->
+                </div>
+                <p>$31.99</p>
+                <button class="add-to-cart" data-product-id="4" onclick="addToCart('4', 'Product 4', 31.99)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="supp.webp" alt="Product 5" class="product-image">
+                <h3>Supplement 5</h3>
+                <p>Increases energy and stamina levels.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars -->
+                </div>
+                <p>$36.99</p>
+                <button class="add-to-cart" data-product-id="5" onclick="addToCart('5', 'Product 5', 36.99)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+            <!-- Second Row of Products -->
+            <div class="product">
+                <img src="supp2.webp" alt="Product 6" class="product-image">
+                <h3>Supplement 6</h3>
+                <p>Enhances mood and reduces stress.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> <!-- 3 stars -->
+                </div>
+                <p>$18.99</p>
+                <button class="add-to-cart" data-product-id="6" onclick="addToCart('6', 'Product 6', 18.99)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="supp2.webp" alt="Product 7" class="product-image">
+                <h3>Supplement 7</h3>
+                <p>Perfect for post-workout recovery.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <!-- 5 stars -->
+                </div>
+                <p>$34.99</p>
+                <button class="add-to-cart" data-product-id="7" onclick="addToCart('7', 'Product 7', 34.99)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="supp.webp" alt="Product 8" class="product-image">
+                <h3>Supplement 8</h3>
+                <p>Increases strength and muscle mass.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars -->
+                </div>
+                <p>$45.99</p>
+                <button class="add-to-cart" data-product-id="8" onclick="addToCart('8', 'Product 8', 45.99)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="supp2.webp" alt="Product 9" class="product-image">
+                <h3>Supplement 9</h3>
+                <p>Promotes healthy skin and nails.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <!-- 4 stars -->
+                </div>
+                <p>$22.99</p>
+                <button class="add-to-cart" data-product-id="9" onclick="addToCart('9', 'Product 9', 22.99)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </div>
+    </section>
+      <!-- Newsletter Signup Section -->
+      <section class="newsletter">
+        <div class="newsletter-content">
+            <h2 style="color: rgba(46, 166, 66, 0.943);">Sign Up for Our Newsletter</h2>
+            <p style="color: rgb(253, 29, 29);">Get the latest updates and offers delivered straight to your inbox.</p>
+            <form id="newsletter-form">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p id="subscribe-message" style="display: none;"></p>
+        </div>
+    </section>
+    <!-- Benefits Section Start -->
+<section id="benefits" class="benefits-section">
+    <div class="container">
+        <h2 class="section-title">Why Choose Our Supplements?</h2>
+        <div class="benefits-wrapper">
+            <div class="benefit-item">
+                <i class="icon fa fa-check-circle"></i>
+                <h3>High Quality Ingredients</h3>
+                <p>We use only the best and purest ingredients to ensure your supplements work effectively.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="icon fa fa-thumbs-up"></i>
+                <h3>Scientifically Backed Formulas</h3>
+                <p>Our products are formulated based on the latest scientific research for optimal results.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="icon fa fa-heartbeat"></i>
+                <h3>Improve Your Health</h3>
+                <p>Our supplements help support your immune system, energy levels, and overall well-being.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="icon fa fa-shield-alt"></i>
+                <h3>Safe and Trusted</h3>
+                <p>All our products are third-party tested to ensure safety, potency, and reliability.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Benefits Section End -->
+        <!--footer section-->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>soveregain  <br>   <span>supplements</span></h2>
+            </div>
+            <div class="footer-links">
+                <h3 style="color:white;">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3 style="color:white;">Contact Us</h3>
+                <p>123 Supplement Street<br>Healthy City, HC 12345</p>
+                <p>Phone: (123) 456-7890</p>
+                <a href="#" style="text-decoration: none; color: rgb(46, 173, 65);">Email: @soveregain/supplement.com</a>
+            </div>
+            <div class="footer-social">
+                <h3 style="color:white;">Follow Us</h3>
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-payments">
+                <h3 style="color:white;">We Accept</h3>
+                <img src="visa.svg" alt="Visa" class="payment-icon">
+                <img src="eaaypaisa.webp" alt="MasterCard" class="payment-icon">
+                <img src="mastercard.svg" alt="PayPal" class="payment-icon">
+                <img src="paypal.svg" alt="American Express" class="payment-icon">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Supplement Store. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+function addToCart(id, name, price) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const existingItem = cartItems.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += 1; // Increment quantity if already in cart
+            } else {
+                cartItems.push({ id, name, price, quantity: 1 });
+            }
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            alert(` ${name} ADDED TO CART!`);
+            updateCartCount(); // Update cart count in navigation
+        }
+        function updateCartCount() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').textContent = `(${totalItems})`;
+        }
+        // Call this function on page load to set initial count
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+</body>
+</html>

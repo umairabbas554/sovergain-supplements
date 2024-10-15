@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="confirmation-page"></section>
+        <h2 id="confer">CONFERM YOUR PAYMENT</h2>
+        
+        <div class="order-summary">
+            <h3 id="cnofermation">Order Summary</h3>
+            <p>Total Items: <span id="total-items">0</span></p>
+            <p>Total Price: $<span id="total-price">0.00</span></p>
+        </div>
+
+        <div class="payment-methods">
+            <h3>Select Payment Method</h3>
+
+            <!-- Credit Card Payment Option -->
+            <div class="payment-option">
+                <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                <label for="credit-card">Credit Card</label>
+            </div>
+
+            <!-- PayPal Payment Option -->
+            <div class="payment-option">
+                <input type="radio" id="paypal" name="payment-method" value="paypal">
+                <label for="paypal">PayPal</label>
+            </div>
+
+            <!-- Bank Transfer Payment Option -->
+            <div class="payment-option">
+                <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer">
+                <label for="bank-transfer">Bank Transfer</label>
+            </div>
+
+            <!-- JazzCash Payment Option -->
+            <div class="payment-option">
+                <input type="radio" id="jazzcash" name="payment-method" value="jazzcash">
+                <label for="jazzcash">JazzCash</label>
+            </div>
+
+            <!-- Easypaisa Payment Option -->
+            <div class="payment-option">
+                <input type="radio" id="easypaisa" name="payment-method" value="easypaisa">
+                <label for="easypaisa">Easypaisa</label>
+            </div>
+
+            <!-- User input for payment number -->
+            <div class="payment-input">
+                <label for="payment-number">Enter your account no//phone number:</label>
+                <input type="text" id="payment-number" placeholder="Enter your payment number" required>
+            </div>
+
+            <button id="confirm-payment-btn">Confirm Payment</button>
+        </div>
+    </section>
+
+    
+        
+    </button>
+    <button id="single-2" onclick="history.back()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+    <script src="script.js"></script>
+
+    <script>
+        // Function to get cart items from local storage
+        function getCartItems() {
+            return JSON.parse(localStorage.getItem('cartItems')) || [];
+        }
+
+        // Function to display order summary on the confirmation page
+        function displayOrderSummary() {
+            const cartItems = getCartItems();
+            const totalItemsContainer = document.getElementById('total-items');
+            const totalPriceContainer = document.getElementById('total-price');
+            
+            let totalItems = 0;
+            let totalPrice = 0;
+
+            cartItems.forEach(item => {
+                totalItems += item.quantity;
+                totalPrice += item.price * item.quantity;
+            });
+
+            totalItemsContainer.textContent = totalItems;
+            totalPriceContainer.textContent = totalPrice.toFixed(2);
+        }
+
+        // Initialize the confirmation page by displaying order summary
+        document.addEventListener('DOMContentLoaded', displayOrderSummary);
+
+        // Event listener for confirming payment
+        document.getElementById('confirm-payment-btn').addEventListener('click', function() {
+            const selectedPaymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+            const paymentNumber = document.getElementById('payment-number').value.trim();
+
+            // Validate if payment number is entered
+            if (!paymentNumber) {
+                alert('Please enter your account no/phone number.');
+                return;
+            }
+
+            // Regular expressions for validation (customized per payment method)
+            const validationRules = {
+                'credit-card': /^[0-9]{14}$/, // 14 digits for credit card
+                'paypal': /^[0-9a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{12}$/, // simple email format for PayPal
+                'bank-transfer': /^[0-9]{12,14}$/, // 10-12 digits for bank transfer
+                'jazzcash': /^03[0-9]{9}$/, // Format for Pakistani JazzCash phone number (11 digits starting with 03)
+                'easypaisa': /^03[0-9]{9}$/ // Format for Pakistani Easypaisa phone number (11 digits starting with 03)
+            };
+
+            // Check if the entered number is valid based on the selected method
+            const isValid = validationRules[selectedPaymentMethod].test(paymentNumber);
+
+            if (!isValid) {
+                alert('Invalid number. Please enter a valid number  ' + selectedPaymentMethod.charAt(0).toUpperCase() + selectedPaymentMethod.slice(1));
+                return;
+            }
+
+            // Success message based on the selected payment method
+            let paymentMessage = '';
+            switch (selectedPaymentMethod) {
+                case 'credit-card':
+                    paymentMessage = `Thanks for your payment (Card No: ${paymentNumber})!`;
+                    break;
+                case 'paypal':
+                    paymentMessage = `Thanks for your payment  (Email: ${paymentNumber})!`;
+                    break;
+                case 'bank-transfer':
+                    paymentMessage = `Thanks for your payment  (Account No: ${paymentNumber})!`;
+                    break;
+                case 'jazzcash':
+                    paymentMessage = `Thanks for your payment  (Phone No: ${paymentNumber})!`;
+                    break;
+                case 'easypaisa':
+                    paymentMessage = `Thanks for your payment  (Phone No: ${paymentNumber})!`;
+                    break;
+                default:
+                    paymentMessage = 'Please select a valid payment method.';
+            }
+
+            alert(paymentMessage);
+
+            // Payment processing logic can be added here.
+            // Reset the payment number input after successful payment
+    document.getElementById('payment-number').value = '';
+        });
+        
+
+    </script>
+</body>
+</html>
